@@ -5,9 +5,6 @@ Written using Jane Street's packages:
 * core `0.14.0`
 * ppx_jane `0.14.0`
 
-
-**Caveat**: This strategy scales $O(N_g^2)$, so for large $N_g$ the computation is quite slow. Instead, for large $N_g$, we just make a random guess that will hopefully prune the `gamestate` to a more manageable size. The threshold for large $N_g$ is currently set as `_random_guess_thresh = 3000` in `guesser.ml`.
-
 # Strategy
 See `strategy.ipynb`.
 
