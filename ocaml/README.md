@@ -5,21 +5,11 @@ Written using Jane Street's packages:
 * core `0.14.0`
 * ppx_jane `0.14.0`
 
-# Strategy overview
-Let a `hand` be a collection of cards.
-
-The first guess is pretty much random.
-Given the feedback of the guess, we can compute the `gamestate`, i.e. all possible `hand`s that would result in such a feedback, so the true answer must be within the `gamestate`.
-
-Suppose we choose a random `hand`s in the `gamestate` as our next guess. Each of the remaining `hand`s is a candidate for the answer and will give a possible feedback (not necessarily all distinct). Consider a possible feedback that appears $n$ times, then in the scenario where the feedback actually occurs, the `gamestate` is reduced to exactly the $n$ corresponding answers. While a possible feedback with smaller $n$ means a lower probability of from actually realizing, in the case it does appear, it reduces the `gamestate` to a much smaller space. We can thus compute a weighted number of remaining states:
-$$
-\sum_{i=1}^{N_f} n_i \frac{n_i}{N_g},
-$$
-where $N_f$ is the number of distinct feedbacks for our random guess, and $N_g$ is the size of `gamestate` (i.e. number of feasible `hand`s that could be the answer).
-
-The strategy is to find the guess that minimises this weighted sum. Since the denominator is all $N_g$, the strategy just tries to find the guess that minimises $\sum_i n_i^2$. 
 
 **Caveat**: This strategy scales $O(N_g^2)$, so for large $N_g$ the computation is quite slow. Instead, for large $N_g$, we just make a random guess that will hopefully prune the `gamestate` to a more manageable size. The threshold for large $N_g$ is currently set as `_random_guess_thresh = 3000` in `guesser.ml`.
+
+# Strategy
+See `strategy.ipynb`.
 
 # To run
 
