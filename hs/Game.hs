@@ -1,4 +1,4 @@
-module Game (feedback, initialGuess, nextGuess, GameState) where
+module Game (feedback, initialGuess, nextGuess, Hand, GameState) where
 
 import Card
 import Data.List

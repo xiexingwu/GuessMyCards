@@ -1,3 +1,10 @@
+# The Code
+There are two versions of the code, one in OCaml and one in Haskell.
+
+The Haskell code implements the logic, but is missing a driver for the functions to be executed in a meaningful manner (i.e. accept an input answer).
+
+The OCaml code is more fully featured. Instructions on how to run in the README of the OCaml folder.
+
 # The Game
 ## Rules
 The game consists of two players with a standard 52 card deck of playing cards.

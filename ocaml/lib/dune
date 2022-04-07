@@ -1,0 +1,6 @@
+(library
+ (name game)
+ (libraries base stdio core)
+ (preprocess 
+  (pps ppx_jane)))
+

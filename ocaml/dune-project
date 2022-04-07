@@ -1,0 +1,10 @@
+(lang dune 3.0)
+
+(documentation "https://xiexingwu.github.io/GuessMyCards/ocaml/")
+
+(source
+ (github xiexingwu/GuessMyCards))
+
+(license ISC)
+
+(authors "Michael Xie")
